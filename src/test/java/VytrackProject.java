@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 class VytrackProject {
     public static void main(String[] args) throws InterruptedException {
-        Users("SalesManager", "UserUser123");
+        Users("Invalid", "UserUser123");
     }
 
     public static void Users(String username1, String password1) throws InterruptedException {
@@ -19,12 +19,12 @@ class VytrackProject {
 
         //2. Given I am on login page : https://qa3.vytrack.com/user/login
         driver.get("https://qa3.vytrack.com/user/login");
-
+        Thread.sleep(3000);
         //3. When I enter valid user name:
         WebElement username = driver.findElement(By.xpath("//input[@id='prependedInput']"));
         username.click();
         username.sendKeys(username1);
-
+        Thread.sleep(3000);
         //4. And I enter valid Password
         WebElement password = driver.findElement(By.xpath("//input[@id='prependedInput2']"));
         password.click();
