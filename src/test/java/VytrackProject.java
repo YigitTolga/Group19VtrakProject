@@ -31,5 +31,13 @@ class VytrackProject {
         password.click();
         password.sendKeys(password1);
 
+        //6. And Click Login button
+        WebElement loginButton = driver.findElement(By.xpath("//button[@id='_submit']"));
+        loginButton.click();
+        Thread.sleep(3000);
+        //7. Then I should be able to log in to the application : Verify Login
+        String expectedTitle = "Dashboard";
+        String actualTitle = driver.getTitle();
+
     }
 }
