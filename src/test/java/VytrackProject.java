@@ -8,6 +8,7 @@ class VytrackProject {
     public static void main(String[] args) {
 
     }
+    //aa
     public static void TruckDriver(String username1, String password1) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         // 1. Open Chrome browser
