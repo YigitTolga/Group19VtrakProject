@@ -7,10 +7,10 @@ import java.util.concurrent.TimeUnit;
 
 class VytrackProject {
     public static void main(String[] args) throws InterruptedException {
-        Users("Invalid", "UserUser123");
+        User("Invalid", "UserUser123");
     }
 
-    public static void Users(String username1, String password1) throws InterruptedException {
+    public static void User(String username1, String password1) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         // 1. Open Chrome browser
         WebDriver driver = new ChromeDriver();
