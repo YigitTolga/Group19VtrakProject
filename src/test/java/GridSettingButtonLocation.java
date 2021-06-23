@@ -51,7 +51,7 @@ public class GridSettingButtonLocation {
     }
 
     @Test
-    public void GridSettingButtonLocation() throws InterruptedException {
+    public void GridSettingLocation() throws InterruptedException {
         //1.Login application
         login();
         //2. Click Fleet module on main page
