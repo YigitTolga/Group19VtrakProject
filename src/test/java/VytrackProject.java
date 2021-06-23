@@ -41,7 +41,7 @@ class VytrackProject {
         if (actualTitle.equals(expectedTitle)) {
             System.out.println("Login Successful for User:" + username1 + "  password: " + password1);
         } else {
-            System.out.println("Login Failed for User: " + username1 + "  password: " + password1);
+            System.out.println("Invalid username or Password");
         }
     }
 
