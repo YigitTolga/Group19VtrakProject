@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
-class VytrackProject {
+class VytrackLogin {
     public static void main(String[] args) throws InterruptedException {
         User("User154", "UserUser123");
     }
