@@ -4,10 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.*;
 
-import org.testng.annotations.Test;
 import utility.WebDriverFactory;
 
 
@@ -31,10 +29,11 @@ public class GridSettingButtonLocation {
         driver.quit();
     }
 
-    @Test
+  //Login Method
     public void login() throws InterruptedException {
 
         //1. When I enter valid user name:
+        Thread.sleep(1000);
         WebElement username = driver.findElement(By.xpath("//input[@id='prependedInput']"));
         username.click();
         username.sendKeys("User153");
@@ -65,20 +64,22 @@ public class GridSettingButtonLocation {
 
         vehicle.click();
 
-        //4.Find out Reset button on the right side of Refresh button
+        //4.Find out Grid Setting button on the right side of Reset button
 
 
         Thread.sleep(2000);
-        WebElement refresh = driver.findElement(By.xpath("(//a[@href='#'])[16]"));
+        WebElement gridSettingBtn = driver.findElement(By.xpath("(//a[@href='#'])[18]"));
         Thread.sleep(2000);
         WebElement reset = driver.findElement(By.xpath("(//a[@href='#'])[17]"));
 
-        Thread.sleep(2000);
-        int resetLocation = reset.getLocation().getX();
-        Thread.sleep(2000);
-        int refreshLocation = refresh.getLocation().getX();
-        if (resetLocation > refreshLocation) {
-            System.out.println("Reset button right side of the Refresh button");
+        Thread.sleep(1000);
+        int resetLocationX = reset.getLocation().getX();
+        int resetLocationY = reset.getLocation().getY();
+        int settingLocationX = gridSettingBtn.getLocation().getX();
+        int settingLocationY = gridSettingBtn.getLocation().getY();
+        if (resetLocationX < settingLocationX && resetLocationY == settingLocationY) {
+            System.out.println("Grid Setting button right side of the Reset button");
         }
+
     }
 }
