@@ -4,11 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 import utility.WebDriverFactory;
 
 
+import java.sql.SQLOutput;
 import java.util.concurrent.TimeUnit;
 
 public class GridSettingButtonLocation {
@@ -22,14 +24,7 @@ public class GridSettingButtonLocation {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get("https://qa3.vytrack.com/user/login");
     }
-
-    @AfterClass
-    public void quit() throws InterruptedException {
-        Thread.sleep(8000);
-        driver.quit();
-    }
-
-  //Login Method
+    //Login Method
     public void login() throws InterruptedException {
 
         //1. When I enter valid user name:
@@ -50,9 +45,27 @@ public class GridSettingButtonLocation {
         driver.navigate().refresh();
 
     }
+    //Is Button1 right side of Button2
+    public void isBtn1RightOfBtn2(String button2, String button1) throws InterruptedException {
+
+        String xpath = button2 + "//following-sibling::" + button1;
+        Thread.sleep(2000);
+        WebElement element = driver.findElement(By.xpath(xpath));
+        if (element.isDisplayed()&& element.isEnabled()){
+            System.out.println("Button1  is right side of Button2 ");
+        }
+        element.click();
+
+    }
+    //quit Method
+    @AfterClass
+    public void quit() throws InterruptedException {
+        Thread.sleep(8000);
+        driver.quit();
+    }
 
     @Test
-    public void GridSettingLocation() throws InterruptedException {
+    public void vehicleFunction() throws InterruptedException {
         //1.Login application
         login();
         //2. Click Fleet module on main page
@@ -63,23 +76,11 @@ public class GridSettingButtonLocation {
         WebElement vehicle = driver.findElement(By.xpath("//span[.='Vehicles']"));
 
         vehicle.click();
-
+        Thread.sleep(2000);
         //4.Find out Grid Setting button on the right side of Reset button
 
 
-        Thread.sleep(2000);
-        WebElement gridSettingBtn = driver.findElement(By.xpath("(//a[@href='#'])[18]"));
-        Thread.sleep(2000);
-        WebElement reset = driver.findElement(By.xpath("(//a[@href='#'])[17]"));
-
-        Thread.sleep(1000);
-        int resetLocationX = reset.getLocation().getX();
-        int resetLocationY = reset.getLocation().getY();
-        int settingLocationX = gridSettingBtn.getLocation().getX();
-        int settingLocationY = gridSettingBtn.getLocation().getY();
-        if (resetLocationX < settingLocationX && resetLocationY == settingLocationY) {
-            System.out.println("Grid Setting button right side of the Reset button");
-        }
-
+        isBtn1RightOfBtn2("//a[@title='Reset']", "div[@class='column-manager dropdown']");
     }
+
 }
