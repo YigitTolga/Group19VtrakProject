@@ -1,3 +1,5 @@
+package Assignment3;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -5,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
-class VytrackProject {
+class VytrackLogin {
     public static void main(String[] args) throws InterruptedException {
         User("User154", "UserUser123");
     }
@@ -41,7 +43,7 @@ class VytrackProject {
         if (actualTitle.equals(expectedTitle)) {
             System.out.println("Login Successful for User:" + username1 + "  password: " + password1);
         } else {
-            System.out.println("Login Failed for User: " + username1 + "  password: " + password1);
+            System.out.println("Invalid username or Password");
         }
     }
 

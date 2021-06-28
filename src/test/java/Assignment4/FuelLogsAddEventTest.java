@@ -1,12 +1,12 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
+package Assignment4;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import utility.WebDriverFactory;
 
 import java.util.concurrent.TimeUnit;
 
@@ -28,9 +28,7 @@ public class FuelLogsAddEventTest {
         Thread.sleep(8000);
         driver.quit();
     }
-
-
-    public void login() throws InterruptedException {
+        public void login() throws InterruptedException {
 
         //1. When I enter valid user name:
         WebElement username = driver.findElement(By.xpath("//input[@id='prependedInput']"));
@@ -60,10 +58,10 @@ public class FuelLogsAddEventTest {
         //3. Then click Fuel Log button
         WebElement fuelLog = driver.findElement(By.xpath("(//span[@class='title title-level-2'])[5]"));
         fuelLog.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 
         //4. Click on of fuel long and see view details
-        WebElement viewLog = driver.findElement(By.xpath("//td[.='Exxon']"));
+        WebElement viewLog = driver.findElement(By.xpath("//td[@class='string-cell grid-cell grid-body-cell grid-body-cell-Vendor']"));
         viewLog.click();
         Thread.sleep(2000);
 
@@ -94,6 +92,5 @@ public class FuelLogsAddEventTest {
         //8. Click activity button
         driver.findElement(By.xpath("//a[.='Activity']")).click();
     }
-
 
 }
