@@ -53,6 +53,8 @@ public class GridSettingButtonLocation {
         WebElement element = driver.findElement(By.xpath(xpath));
         if (element.isDisplayed()&& element.isEnabled()){
             System.out.println("Button1  is right side of Button2 ");
+        }else {
+            System.out.println("Button1 is not right side of ");
         }
         element.click();
 

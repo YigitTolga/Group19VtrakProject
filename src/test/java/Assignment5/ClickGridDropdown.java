@@ -1,6 +1,4 @@
 package Assignment5;
-
-import com.sun.tools.internal.xjc.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
