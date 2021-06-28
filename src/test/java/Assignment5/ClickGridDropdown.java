@@ -1,3 +1,5 @@
+package Assignment5;
+
 import com.sun.tools.internal.xjc.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +13,7 @@ import utility.WebDriverFactory;
 import java.util.concurrent.TimeUnit;
 
 
-public class Assignment_ZG {
+public class ClickGridDropdown {
 
 
     WebDriver driver;
