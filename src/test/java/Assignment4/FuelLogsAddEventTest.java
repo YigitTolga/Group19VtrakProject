@@ -69,7 +69,7 @@ public class FuelLogsAddEventTest {
                 WebElement addEventBtn = driver.findElement(By.xpath("(//a[@class='btn icons-holder-text no-hash'])[2]"));
         addEventBtn.click();
         Thread.sleep(2000);
-
+//sadasd
         //6. Fill out required fields
                 //1. Fill title of event
         WebElement addEventTitle = driver.findElement(By.xpath("//input[@data-name='field__title']"));
